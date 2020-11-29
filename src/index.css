@@ -1,13 +1,293 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 90vw;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.hero-bg {
+  width: 100%;
+}
+.hero-bg img {
+  width: 100%;
+}
+
+.header-content p {
+  font-size: 20px;
+  text-align: justify;
+  margin-left: 30px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn-div {
+  width: 100%;
+  height: 50px;
+}
+
+.btn-primary {
+  background: #385dfe;
+  width: 10em;
+  height: 40px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: #f1f1f1;
+  margin: 20px 0 0 10px;
+  box-shadow: 1px 1px 5px #14246d;
+  margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+  background: #f1f1f1;
+  color: #385dfe;
+  transition: all 1s ease-in-out;
+}
+a {
+  text-decoration: none;
+  text-align: center;
+  padding-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .header-content {
+    margin-left: 80px;
+    width: 50%;
+  }
+  .hero-bg {
+    width: 50%;
+  }
+}
+
+/* Single Product Section  */
+
+.single-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 100px; */
+  margin-top: 100px;
+}
+.product {
+  background: #385dfe;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.top-product {
+  width: 400px;
+  height: 400px;
+  background: #f1f1f1;
+  box-shadow: 2px 2px 5px #14246d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+.product-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #14246d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #385dfe;
+}
+
+.product-desc {
+  margin-top: 30px;
+}
+.product-desc h2 {
+  font-size: 30px;
+  color: #385dfe;
+  margin: 10px 0;
+}
+.product-desc p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.product-desc h3 {
+  color: #14246d;
+}
+
+.product-desc h3 sub {
+  font-size: 12px;
+  color: #385dfe;
+}
+
+.product-desc ul li {
+  color: #385dfe;
+  list-style-type: circle;
+}
+
+@media screen and (min-width: 768px) {
+  .product-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .product {
+    width: 50%;
+    margin: 0 30px;
+  }
+}
+
+.details {
+  display: flex;
+  width: 90vw;
+  margin-top: 80px;
+}
+.left,
+.right {
+  width: 50%;
+  height: 100%;
+}
+
+.left img {
+  width: 100%;
+  height: 200px;
+}
+
+.right {
+  min-height: 200px;
+  background: #385dfe;
+  border-radius: 0 30px 30px 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.left {
+  border-radius: 30px 0 0 30px;
+}
+
+.right h3,
+.right p,
+.right h2 {
+  margin: 5px 0;
+  color: #f1f1f1;
+}
+
+.right h3 sub {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .details {
+    max-width: 40vw;
+    margin: 20px auto;
+  }
+}
+/* Loading Page  */
+.container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.first,
+.second,
+.third {
+  width: 30px;
+  height: 30px;
+  border-radius: 1px;
+}
+
+.first {
+  background-color: #14246d;
+}
+.second {
+  background-color: #4e80a8;
+}
+.third {
+  background-color: #385dfe;
+}
+
+.gen {
+  animation: animate 1s ease-in-out 2s infinite alternate both;
+}
+@keyframes animate {
+  to {
+    transform: translate(50vw, 50vh) scaleX(5) skewY(60deg);
+  }
+}
+
+/* SignUp Area  */
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-container {
+  width: 100vw;
+  background: #14246d;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-container h2 {
+  color: #e6e6e6;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input {
+  width: 70%;
+  margin: 10px;
+  height: 40px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  background: #e6e6e6;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  form input {
+    max-width: 50%;
+  }
 }
