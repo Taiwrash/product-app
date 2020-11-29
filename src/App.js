@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./pages/Header";
+import GeneralProducts from "./products/GeneralProducts";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Error from "./pages/Error";
+import ProductDetails from "./products/ProductDetails";
+import SignUp from "./users/SignUp";
+import Login from "./users/Login";
+import ProductUpload from "./users/ProductUpload";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Header />
+            <GeneralProducts />
+          </Route>
+          <Route path="/products">
+            <GeneralProducts />
+          </Route>
+          <Route path="/product/:id">
+            <ProductDetails />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/upload">
+            <ProductUpload />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;
