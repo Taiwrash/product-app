@@ -7,6 +7,8 @@ import ProductDetails from "./products/ProductDetails";
 import SignUp from "./users/SignUp";
 import Login from "./users/Login";
 import ProductUpload from "./users/ProductUpload";
+import Button from "./pages/Button";
+import NavBar from "./pages/NavBar";
 
 const App = () => {
   return (
@@ -14,6 +16,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path="/">
+            <NavBar />
             <Header />
             <GeneralProducts />
           </Route>
@@ -25,6 +28,9 @@ const App = () => {
           </Route>
           <Route path="/signup">
             <SignUp />
+          </Route>
+          <Route path="/edit">
+            <Button />
           </Route>
           <Route path="/login">
             <Login />

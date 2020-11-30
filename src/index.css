@@ -266,6 +266,9 @@ a {
   color: #e6e6e6;
   margin-bottom: 30px;
 }
+.form-container p {
+  color: #ce1717;
+}
 
 form {
   display: flex;
@@ -290,4 +293,38 @@ form input {
   form input {
     max-width: 50%;
   }
+}
+
+.btn-secondary {
+  width: 300px;
+  display: flex;
+}
+
+.btn-secondary button {
+  background: #14246d;
+  border: none;
+  width: 100px;
+  margin: 10px;
+  height: 50px;
+  color: #f1f1f1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 20px; */
+  background: #14246d;
+  height: 50px;
+  align-items: center;
+  color: #f1f1f1;
+  font-size: 18px;
+  width: 100vw;
+}
+nav a {
+  text-decoration: none;
+  color: #f1f1f1;
+  margin: 10px;
+}
+nav a:hover {
+  color: #4e80a8;
 }
