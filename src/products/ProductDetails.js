@@ -31,7 +31,7 @@ const ProductDetails = () => {
           return (
             <section className="details" key={item._id}>
               <div className="left">
-                <img src="/images/hunt.png" alt="info" />
+                <img src={item.image} alt="info" />
               </div>
               <div className="right">
                 <h2>Title:{item.name}</h2>
