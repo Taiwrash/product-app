@@ -23,7 +23,7 @@ const Login = () => {
     //   body: JSON.stringify({ email, password }),
     // }).then((res) => console.log(res));
 
-    Axios.post("http://localhost:3200/user/login", data).then((res) =>
+    Axios.post("http://bit.ly/backendpro/user/login", data).then((res) =>
       setResp(res.data)
     );
   };

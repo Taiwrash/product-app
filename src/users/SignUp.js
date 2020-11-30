@@ -26,7 +26,7 @@ const SignUp = () => {
       singleInfo.password &&
       singleInfo.email
     ) {
-      Axios.post("http://localhost:3200/user/signup", singleInfo)
+      Axios.post("http://bit.ly/backendpro/user/signup", singleInfo)
         .then((res) => setSingleInfo(res.data))
         .catch((err) => console.log(err));
     }

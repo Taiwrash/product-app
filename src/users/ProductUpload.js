@@ -23,7 +23,7 @@ const ProductUpload = () => {
       product.image &&
       product.price
     ) {
-      Axios.post("http://localhost:3200/products/add", product)
+      Axios.post("http://bit.ly/backendpro/products/add", product)
         .then((res) => setProduct(res.data))
         .catch((err) => console.log(err));
     } else {

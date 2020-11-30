@@ -9,7 +9,7 @@ const Button = () => {
   console.log(role);
 
   useEffect(() => {
-    fetch(`http://localhost:3200/users`)
+    fetch(`http://bit.ly/backendpro/users`)
       .then((res) => res.json())
       .then((result) => {
         setData(result);
@@ -33,7 +33,6 @@ const Button = () => {
           <NavBar />
         )
       )}
-      <h2>Hello</h2>
     </>
   );
 };

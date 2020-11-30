@@ -5,7 +5,7 @@ const ProductDetails = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
-  const url = "http://localhost:3200/products";
+  const url = "http://bit.ly/backendpro/products";
   useEffect(() => {
     setLoading(true);
     fetch(url)
