@@ -5,7 +5,7 @@ import Loading from "../pages/Loading";
 const GeneralProducts = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const url = "http://bit.ly/backendpro/products";
+  const url = "https://bit.ly/backendpro/products";
   useEffect(() => {
     setIsLoading(true);
     fetch(url)
