@@ -23,9 +23,10 @@ const Login = () => {
     //   body: JSON.stringify({ email, password }),
     // }).then((res) => console.log(res));
 
-    Axios.post("https://bit.ly/backendpro/user/login", data).then((res) =>
-      setResp(res.data)
-    );
+    Axios.post(
+      "https://mylawlegal-internship.herokuapp.com/user/login",
+      data
+    ).then((res) => setResp(res.data));
   };
   return (
     <>

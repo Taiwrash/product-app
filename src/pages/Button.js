@@ -9,7 +9,7 @@ const Button = () => {
   console.log(role);
 
   useEffect(() => {
-    fetch(`https://bit.ly/backendpro/users`)
+    fetch(`https://mylawlegal-internship.herokuapp.com/users`)
       .then((res) => res.json())
       .then((result) => {
         setData(result);

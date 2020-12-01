@@ -5,7 +5,7 @@ const ProductDetails = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
-  const url = "https://bit.ly/backendpro/products";
+  const url = "https://mylawlegal-internship.herokuapp.com/products";
   useEffect(() => {
     setLoading(true);
     fetch(url)

@@ -26,7 +26,10 @@ const SignUp = () => {
       singleInfo.password &&
       singleInfo.email
     ) {
-      Axios.post("https://bit.ly/backendpro/user/signup", singleInfo)
+      Axios.post(
+        "https://mylawlegal-internship.herokuapp.com/user/signup",
+        singleInfo
+      )
         .then((res) => setSingleInfo(res.data))
         .catch((err) => console.log(err));
     }
