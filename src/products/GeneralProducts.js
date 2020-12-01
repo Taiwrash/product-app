@@ -8,7 +8,9 @@ const GeneralProducts = () => {
   const url = "https://bit.ly/backendpro/products";
   useEffect(() => {
     setIsLoading(true);
-    fetch(url)
+    fetch(url, {
+      mode: "no-cors",
+    })
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
