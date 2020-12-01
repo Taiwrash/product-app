@@ -7,10 +7,12 @@ const GeneralProducts = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const url = "https://mylawlegal-internship.herokuapp.com/products";
+  // const url = "http://localhost:3200/products";
   useEffect(() => {
     setIsLoading(true);
     Axios.get(url).then((data) => {
-      setData(data.data);
+      setData(data.data.data);
+
       setIsLoading(false);
     });
   }, []);
