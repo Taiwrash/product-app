@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SingleProduct from "./SingleProduct";
 import Loading from "../pages/Loading";
+import Axios from "axios";
 
 const GeneralProducts = () => {
   const [data, setData] = useState([]);
@@ -8,15 +9,12 @@ const GeneralProducts = () => {
   const url = "https://mylawlegal-internship.herokuapp.com/products";
   useEffect(() => {
     setIsLoading(true);
-    fetch(url, {
-      mode: "no-cors",
-    })
+    Axios.get(url)
       .then((res) => res.json())
       .then((data) => {
         setData(data.data);
         setIsLoading(false);
-      })
-      .catch((err) => console.log(err));
+      });
   }, []);
   return isLoading ? (
     <Loading />
