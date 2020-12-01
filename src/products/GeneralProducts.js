@@ -9,12 +9,10 @@ const GeneralProducts = () => {
   const url = "https://mylawlegal-internship.herokuapp.com/products";
   useEffect(() => {
     setIsLoading(true);
-    Axios.get(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data.data);
-        setIsLoading(false);
-      });
+    Axios.get(url).then((data) => {
+      setData(data.data);
+      setIsLoading(false);
+    });
   }, []);
   return isLoading ? (
     <Loading />
