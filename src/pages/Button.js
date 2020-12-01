@@ -9,7 +9,7 @@ const Button = () => {
   console.log(role);
 
   useEffect(() => {
-    fetch(`http://bit.ly/backendpro/users`)
+    fetch(`https://bit.ly/backendpro/users`)
       .then((res) => res.json())
       .then((result) => {
         setData(result);

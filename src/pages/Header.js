@@ -14,7 +14,7 @@ const Header = () => {
             production build, use npm run build.
           </p>
 
-          <Link to="/products" className="btn-primary">
+          <Link to="/signup" className="btn-primary">
             Start Now
           </Link>
         </div>
