@@ -5,50 +5,46 @@ const ProductDetails = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
+  // console.log(useParams());
+
   const url = "https://mylawlegal-internship.herokuapp.com/products";
+  // const url = "http://localhost:3200/products";
+
   useEffect(() => {
     setLoading(true);
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         const resp = data.data;
-
-        setItems(resp.filter((item) => item._id !== +id));
+        const newItem = resp.find((item) => item._id === id);
+        setItems(newItem);
         setLoading(false);
       });
-  }, [id]);
+  }, []);
 
-  //   console.log(items);
-
-  console.log(items);
-
+  const { name, price, image, description } = items;
   return (
     <>
       {loading ? (
         <Loading />
       ) : (
-        items.map((item) => {
-          return (
-            <section className="details" key={item._id}>
-              <div className="left">
-                <img src={item.image} alt="info" />
-              </div>
-              <div className="right">
-                <h2>Title:{item.name}</h2>
-                <p>Description: {item.description}</p>
-                <h3>
-                  Price: {item.price} <sub>per kg</sub>
-                </h3>
-                <Link to="/products" className="btn-primary">
-                  Continue Shopping
-                </Link>
-              </div>
-            </section>
-          );
-        })
+        <section className="details">
+          <div className="left">
+            <img src="/images/hunt.png" alt="info" />
+          </div>
+          <div className="right">
+            <h2>Title:{name}</h2>
+            <p>Description: {description}</p>
+            <h3>
+              Price: {price} <sub>per kg</sub>
+            </h3>
+            <Link to="/products" className="btn-primary">
+              Continue Shopping
+            </Link>
+          </div>
+        </section>
       )}
     </>
   );
 };
-
 export default ProductDetails;
